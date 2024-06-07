@@ -1,0 +1,19 @@
+<!-- templates/blog/post_list.html -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Meu Blog</title>
+    </head>
+
+    <body>
+        <h1>Posts Recentes</h1>
+        <ul>
+            {% for post in posts %}
+                <li>
+                    <a href="{% url 'post_detail' post.slug %}">{{ post.title }}</a>
+                    <p>{{ post.pub_date }}</p>
+                </li>
+            {% endfor %}
+        </ul>
+    </body>
+</html>
